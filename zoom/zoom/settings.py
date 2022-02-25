@@ -29,7 +29,13 @@ SECRET_KEY = 'django-insecure-8ddamkxdx1=@o+^)9y&=oj#)a_hr0(99o7e91fzo$e_3dl500g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
+
+ALLOWED_HOSTS = ['hyo-zoom.herokuapp.com']
 
 
 # Application definition
@@ -87,6 +93,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+import dj_database_url
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
