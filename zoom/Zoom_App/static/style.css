@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium","Baloo Tamma",
+  "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+/* form.html */
+
+.wrapper header{
+  margin-top: 30px;
+  color: #0099FF;
+}
+
+.wrapper hr{
+  border-width: 3px;
+  border-color: #0099FF;
+}
+
+h1{
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.for {
+   width: 100%;
+   margin:0 auto;
+   border: 1px solid #9c9c9c;
+   padding: 50px;
+   box-sizing: border-box;
+ }
+
+ .item{
+   margin-bottom: 20px;
+ }
+
+.label_left{
+  display: inline-block;
+  width:25%;
+  border-left: solid 5px #5250e0;
+  padding-left: 15px;
+  vertical-align:top;
+}
+
+.form-control {
+     padding: 10px;
+     width: 65%;
+ }
+
+ .form select{
+   height: 35px;
+   width: 65%;
+ }
+
+.sub {
+   background: #5250e0;
+   color: white;
+   font-size:16px;
+   font-weight:bold;
+   padding: 10px 20px;
+   margin: 0 5px;
+ }
+
+.res {
+   background: #333;
+   color: white;
+   font-size:16px;
+   font-weight:bold;
+   padding: 10px 20px;
+   margin: 0 5px;
+ }
+
+.botan{
+  text-align: center;
+}

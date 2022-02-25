@@ -1,0 +1,20 @@
+{% extends "App_Folder_HTML/Header.html" %}
+
+{% block content_block %}
+
+<h2>授業一覧</h2>
+<table class="table">
+  <thead>
+    <tr><th>授業名</th></tr>
+  </thead>
+  <tbody>
+    {% for lesson in lesson_list %}
+    <tr>
+        <td>{{ lesson.Name }}</td>
+        <td><a href="form2/{{ lesson.id }}">参加</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

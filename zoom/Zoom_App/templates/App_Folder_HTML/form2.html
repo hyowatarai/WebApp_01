@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>登録フォーム</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="row">
+                <h1>ZOOM</h1>
+        </div>
+      </header>
+
+    <hr>
+
+
+      <!-- フォームを定義 -->
+      <form action="{% url 'Zoom_App:form' %}" method="post" class="for">
+        {% csrf_token %}
+        {% load widget_tweaks %}
+        <div class="item">
+          <label class="label_left" for="{{ form.Name.id_for_label }}">授業名</label>
+          <input type="text" class = "form-control" value = "{{ lesson_form2.Name }}" required>
+        </div>
+
+        <div class="item">
+          <label class="label_left" for="{{ form.Week.id_for_label }}">ID</label>
+          <input type="text" class = "form-control" value = "{{ lesson_form2.Nyu }}" required>
+         </div>
+          
+        <div class="item">
+          <label class="label_left" for="{{ form.Password.id_for_label }}">パスワード</label>
+          <input type="text" class = "form-control" value = "{{ lesson_form2.Password }}" required>
+        </div>
+
+        <div class="item">
+          <label class="label_left" for="{{ form.Url.id_for_label }}">URL</label>
+          <input type="text" class = "form-control" value = "{{ lesson_form2.Url }}" required>
+        </div>
+
+        <div class="item">
+          <label class="label_left" for="{{ form.Url.id_for_label }}">開始時刻</label>
+          <input type="text" class = "form-control" required>
+        </div>
+
+        <div class="item">
+          <label class="label_left" for="{{ form.Url.id_for_label }}">終了時刻</label>
+          <input type="text" class = "form-control" required>
+        </div>
+
+        <div class="botan">
+          <input type="submit" value="入室" class="sub"> 
+        </div>
+      </form>
+      <hr>
+  </div>
+  </body>
+</html>

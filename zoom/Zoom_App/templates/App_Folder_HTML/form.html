@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>登録フォーム</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="row">
+                <h1>ZOOM</h1>
+        </div>
+      </header>
+
+    <hr>
+
+
+      <!-- フォームを定義 -->
+      <form action="{% url 'Zoom_App:form' %}" method="post" class="for">
+        {% csrf_token %}
+        {% load widget_tweaks %}
+        <div class="item">
+          <label class="label_left" for="{{ form.Name.id_for_label }}">授業名</label>
+          <!-- <input type="text" class = "form-control" value = "{{ lesson_form2.Name }}" required> -->
+          {{ form.Name|add_class:'form-control' }}
+          {% for error in form.name.errors %}
+            <span class="help-block">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="item">
+          <label class="label_left" for="{{ form.Week.id_for_label }}">曜日</label>
+          {{ form.Week|add_class:'form-control' }}
+          {% for error in form.week.errors %}
+            <span class="help-block">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="item">
+          <label class="label_left" for="{{ form.Nyu.id_for_label }}">ID</label>
+          {{ form.Nyu|add_class:'form-control' }}
+          {% for error in form.nyu.errors %}
+            <span class="help-block">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="item">
+          <label class="label_left" for="{{ form.Password.id_for_label }}">パスワード</label>
+          {{ form.Password|add_class:'form-control' }}
+          {% for error in form.password.errors %}
+            <span class="help-block">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="item">
+          <label class="label_left" for="{{ form.Url.id_for_label }}">URL</label>
+          {{ form.Url|add_class:'form-control' }}
+          {% for error in form.url.errors %}
+            <span class="help-block">{{ error }}</span>
+          {% endfor %}
+        </div>
+
+        <div class="botan">
+          <input type="reset" value="リセット" class="res">
+          <input type="submit" value="登録" class="sub">
+        </div>
+      </form>
+      <hr>
+  </div>
+  </body>
+</html>
