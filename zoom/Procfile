@@ -1,1 +1,1 @@
-web: gunicorn ZOOM/zoom.wsgi
+web: gunicorn zoom.wsgi
