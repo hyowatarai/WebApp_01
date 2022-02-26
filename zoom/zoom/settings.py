@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-8ddamkxdx1=@o+^)9y&=oj#)a_hr0(99o7e91fzo$e_3dl500g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'zoom.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR +  'db.sqlite3',
     }
 }
 
@@ -127,7 +127,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIES = (
-    BASE_DIR / 'static',
+    BASE_DIR + 'static',
     os.path.join(BASE_DIR, 'static'),
 )
 
