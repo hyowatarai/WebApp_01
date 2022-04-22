@@ -7,3 +7,6 @@ class Lesson(models.Model):
     Nyu = models.CharField(max_length=100, null=True, blank=True)
     Password = models.CharField(max_length=100, null=True, blank=True)
     Url = models.URLField(null=True, blank=True)
+
+    def __str__(self):
+        return self.Name

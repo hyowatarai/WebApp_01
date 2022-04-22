@@ -1,19 +1,6 @@
 import time
 import subprocess
-from unicodedata import name
 import pyautogui as pg
-from flask import request
-import os
-import pywinauto as pwa
-import PySimpleGUI as sg
-import schedule
-import sched
-import time
-import datetime
-import random
-import glob
-import threading
-import sys
 from pathlib import Path
 
 def task0(Nyu, Pass):
@@ -47,9 +34,3 @@ def task0(Nyu, Pass):
     pg.typewrite("{}".format(Pass))
     pg.press("Enter")
 
-# zoom_path=r""#Zoom.exeのパスを定義
-# path1=r""#ホームページの画像のパスを定義
-# path2=r""#参加ボタンの画像のパスを定義
-# path3=r""#退出ボタンの画像のパスを定義
-
-task0(91247320268, 330921)

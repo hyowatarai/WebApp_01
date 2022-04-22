@@ -1,8 +1,15 @@
+
 {% extends "App_Folder_HTML/Header.html" %}
 
 {% block content_block %}
 
 <h2>授業一覧</h2>
+
+<form action="" method="get">
+  <input name="query" value="{{ request.GET.query }}" type="text">
+  <button type="submit">検索する</button>
+</form>
+
 <table class="table">
   <thead>
     <tr><th>授業名</th></tr>
@@ -12,6 +19,8 @@
     <tr>
         <td>{{ lesson.Name }}</td>
         <td><a href="form2/{{ lesson.id }}">参加</a></td>
+        <td><a href="update/{{ lesson.id }}">編集</a></td>
+        <td><a href="delete/{{ lesson.id }}">削除</a></td>
     </tr>
     {% endfor %}
   </tbody>

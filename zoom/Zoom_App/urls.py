@@ -1,5 +1,4 @@
 from django.urls import path
-from flask import request
 from . import views
 
 
@@ -10,4 +9,6 @@ urlpatterns = [
     path('', views.LessonList.as_view(), name='list'),
     path('form2/<int:pk>/',views.Form2.as_view(),name='form2'),
     path("ajax/", views.zoom, name="zoom"),
+    path('update/<int:pk>/',views.Update.as_view(), name="update"),
+    path('delete/<int:pk>/',views.DeleteView.as_view(), name="delete")
 ]
